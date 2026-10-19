@@ -335,20 +335,31 @@ async def send_question(query, context):
     total = len(state["questions"])
     cur = state["current_index"] + 1
     state["answered"] = False
-    em = "🧬" if q["subject"] == "Biology" else "⚛️"
-    src = f"\n📌 {q['source']}" if q.get("source") else ""
-    txt = f"{em} *Q{cur}/{total}* | ⏱️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n"
-    if q.get("has_image"):
-        txt = f"🖼️ *Refer to diagram*\n\n{txt}"
-    txt += FOOTER
-    letters = ["A", "B", "C", "D"]
-    kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
-    try:
-        await query.edit_message_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
-    except:
-        await query.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
-    state["timer_task"] = asyncio.create_task(question_timeout(query, context, query.from_user.id))
+    em = "\U0001f9ec" if q["subject"] == "Biology" else "\u269b\ufe0f"
+    src = f"\n\U0001f4cc {q['source']}" if q.get("source") else ""
 
+    # For image questions: send image notice first, then question+options separately
+    if q.get("has_image"):
+        img_txt = f"\U0001f5bc\ufe0f *DIAGRAM / IMAGE*\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\U0001f4f7 *Refer to the diagram shown above*\n\n_(Image-based question from PYQ book)_"
+        try:
+            await query.edit_message_text(img_txt, parse_mode=ParseMode.MARKDOWN)
+        except:
+            await query.message.reply_text(img_txt, parse_mode=ParseMode.MARKDOWN)
+        await asyncio.sleep(0.5)
+        txt = f"{em} *Q{cur}/{total}* | \u23f1\ufe0f 60s\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n{q['question']}{src}\n{FOOTER}"
+        letters = ["A", "B", "C", "D"]
+        kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
+        await query.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
+    else:
+        txt = f"{em} *Q{cur}/{total}* | \u23f1\ufe0f 60s\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n{q['question']}{src}\n{FOOTER}"
+        letters = ["A", "B", "C", "D"]
+        kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
+        try:
+            await query.edit_message_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
+        except:
+            await query.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
+
+    state["timer_task"] = asyncio.create_task(question_timeout(query, context, query.from_user.id))
 
 async def question_timeout(query, context, user_id):
     await asyncio.sleep(60)
@@ -420,18 +431,10 @@ async def show_results(query, context):
 
 # ==================== BOT INIT ====================
 async def post_init(application):
-    await application.bot.set_my_commands([
-        ("start", "🎮 Quiz shuru karo"),
-        ("help", "📖 Help"),
-        ("bio", "🧬 Biology Quiz"),
-        ("phys", "⚛️ Physics Quiz"),
-        ("mixed", "🎯 Mixed Quiz"),
-        ("score", "📊 Score"),
-        ("stats", "🏆 Stats"),
-        ("restart", "🔄 Reset"),
-        ("about", "🤖 About"),
-    ])
-    print("✅ Commands menu set!", flush=True)
+    # Removed command menu as per user request
+    # Delete existing commands from bot
+    await application.bot.delete_my_commands()
+    print("✅ Command menu removed!", flush=True)
 
 # ==================== MAIN ====================
 async def main():
