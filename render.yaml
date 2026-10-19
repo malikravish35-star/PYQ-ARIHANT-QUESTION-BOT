@@ -4,8 +4,9 @@ services:
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
+    plan: free
+    region: oregon
+    healthCheckPath: /
     envVars:
       - key: BOT_TOKEN
         sync: false
-    plan: free
-    region: oregon
