@@ -30,22 +30,7 @@ BIO_QUESTIONS = [q for q in ALL_QUESTIONS if q["subject"] == "Biology"]
 PHYS_QUESTIONS = [q for q in ALL_QUESTIONS if q["subject"] == "Physics"]
 print(f"✅ Loaded {len(ALL_QUESTIONS)} Qs (Bio:{len(BIO_QUESTIONS)}, Phys:{len(PHYS_QUESTIONS)})", flush=True)
 
-# ==================== AUTO-PING EVERY 5 MIN ====================
-RENDER_URL = os.environ.get("RENDER_EXTERNAL_URL", "")
-
-async def auto_ping():
-    while True:
-        await asyncio.sleep(300)
-        if RENDER_URL:
-            try:
-                await asyncio.get_event_loop().run_in_executor(
-                    None, lambda: req_lib.get(f"{RENDER_URL}/", timeout=10)
-                )
-                print(f"🔄 Ping OK", flush=True)
-            except:
-                pass
-
-# ==================== HEALTH SERVER (aiohttp) ====================
+# ==================== HEALTH SERVER ====================
 async def health_handler(request):
     return web.Response(text="NEET Quiz Bot ALIVE! MADE BY SPARTA 🫠")
 
@@ -61,12 +46,27 @@ async def start_web_server():
     print(f"🌐 Web server on port {port}", flush=True)
     return runner
 
+# ==================== AUTO-PING ====================
+RENDER_URL = os.environ.get("RENDER_EXTERNAL_URL", "")
+
+async def auto_ping():
+    while True:
+        await asyncio.sleep(300)
+        if RENDER_URL:
+            try:
+                await asyncio.get_event_loop().run_in_executor(
+                    None, lambda: req_lib.get(f"{RENDER_URL}/", timeout=10)
+                )
+                print("🔄 Ping OK", flush=True)
+            except:
+                pass
+
 # ==================== COMPLIMENTS ====================
 COMPLIMENTS = [
     "🔥 Kya baat hai! You're on FIRE!",
     "🌟 Brilliant! NEET topper material!",
-    "💯 Absolutely perfect! Keep it up!",
-    "🧠 Genius move! Your brain is sharp!",
+    " Absolutely perfect! Keep it up!",
+    " Genius move! Your brain is sharp!",
     "⭐ Wah! You're a star performer!",
     "🚀 Rocket speed! Nothing can stop you!",
     "💪 Beast mode ON! Unstoppable!",
@@ -77,14 +77,14 @@ COMPLIMENTS = [
     "💎 Diamond answer! Precious knowledge!",
     "🦁 Sher! Lion-hearted answer!",
     "⚡ Electric! You're charged up!",
-    "🎪 Masterclass! What an answer!",
-    "🌈 Beautiful! That was flawless!",
-    "🔑 You cracked it like a pro!",
+    " Masterclass! What an answer!",
+    " Beautiful! That was flawless!",
+    " You cracked it like a pro!",
     "🏅 Gold medal answer!",
-    "🔥 Tandoor! Bilkan sahi jawab!",
+    " Tandoor! Bilkan sahi jawab!",
     "💫 Supernova level answer!",
     "🎓 Professor level knowledge!",
-    "🌟 SPARTA ka soldier! Mubarak ho!",
+    " SPARTA ka soldier! Mubarak ho!",
     "⚔️ Warrior mind! Correct strike!",
     "💥 BOOM! Sahi jawaab!",
     "🏹 Arjuna level accuracy!",
@@ -98,7 +98,7 @@ WRONG_ENCOURAGEMENT = [
     "🔄 Don't give up! Revision is key!",
     "🧭 Right path pe ho, bas thoda aur!",
     "📖 Review karo, next time pakka!",
-    "🎯 Close one! Next time nail it!",
+    " Close one! Next time nail it!",
     "💡 Mistakes = proof you're trying!",
     "🌟 Haar ke baad hi jeet aati hai!",
     "⚡ Next question tera hoga!",
@@ -110,7 +110,7 @@ TIMEOUT_MSGS = [
     "⏰ Clock tick tock... Time over!",
 ]
 
-FOOTER = "\n\n━━━━━━━━━━━━━━━━━━━━\n🫠 **MADE BY SPARTA**"
+FOOTER = "\n\n━━━━━━━━━━━━━━━━━━━━\n **MADE BY SPARTA**"
 
 # ==================== USER STATE ====================
 user_data = {}
@@ -120,31 +120,56 @@ def get_user_state(user_id):
         user_data[user_id] = {
             "questions": [], "current_index": 0,
             "correct": 0, "wrong": 0, "timeout_count": 0,
-            "answered": False, "timer_task": None,
+            "answered": False, "timer_task": None, "time_left": 60,
         }
     return user_data[user_id]
+
+# ==================== ANIMATED TIMER ====================
+TIMER_BAR_FULL = "⏳"
+TIMER_BAR_EMPTY = "⌛"
+
+def get_timer_display(seconds_left, total=60):
+    """Create animated timer display"""
+    progress = seconds_left / total
+    if progress > 0.5:
+        return "⏳"  # More time left
+    elif progress > 0.2:
+        return "⌛"  # Time running
+    else:
+        return "⌛🔥"  # Time almost up
+
+def get_timer_bar(seconds_left, total=60):
+    """Create visual timer bar"""
+    filled = int((seconds_left / total) * 10)
+    empty = 10 - filled
+    if seconds_left > 30:
+        bar = "🟩" * filled + "" * empty
+    elif seconds_left > 10:
+        bar = "🟨" * filled + "⬜" * empty
+    else:
+        bar = "🟥" * filled + "⬜" * empty
+    return bar
 
 # ==================== COMMAND HANDLERS ====================
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     text = (
-        f"🤖 *Namaste {user.first_name}!*\n\n"
+        f" *Namaste {user.first_name}!*\n\n"
         f"🧬 *NEET Quiz Bot* mein swagat hai!\n\n"
         f"📚 *Arihant 34 Years PYQs*\n"
         f"📝 Biology: {len(BIO_QUESTIONS)} Questions\n"
-        f"⚛️ Physics: {len(PHYS_QUESTIONS)} Questions\n"
+        f"️ Physics: {len(PHYS_QUESTIONS)} Questions\n"
         f"📋 Total: {len(ALL_QUESTIONS)} Questions\n\n"
         f"⏱️ Har question: *60 seconds*\n"
         f"✅ Sahi jawab = Compliment!\n\n"
-        f"*Commands:* /help\n"
         f"*Choose subject:* 👇"
         f"{FOOTER}"
     )
     keyboard = [
         [InlineKeyboardButton("🧬 Biology", callback_data="subject_Biology"),
          InlineKeyboardButton("⚛️ Physics", callback_data="subject_Physics")],
-        [InlineKeyboardButton("🎯 Both (Mixed)", callback_data="subject_Both")],
+        [InlineKeyboardButton(" Both (Mixed)", callback_data="subject_Both")],
     ]
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -155,10 +180,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🔹 /start — Quiz shuru karo 🎮\n"
         "🔹 /help — Help message 📖\n"
         "🔹 /bio — Biology quiz 🧬\n"
-        "🔹 /phys — Physics quiz ⚛️\n"
+        " /phys — Physics quiz ⚛️\n"
         "🔹 /mixed — Mixed quiz 🎯\n"
         "🔹 /score — Current score 📊\n"
-        "🔹 /stats — Total stats 🏆\n"
+        "🔹 /stats — Total stats \n"
         "🔹 /restart — Reset quiz 🔄\n"
         "🔹 /about — Bot info 🤖\n\n"
         "━━━━━━━━━━━━━━━━━━━━\n\n"
@@ -179,7 +204,7 @@ async def score_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     pct = round((c / (c + w)) * 100) if (c + w) > 0 else 0
     filled = int((current / total) * 10)
     bar = "🟩" * filled + "⬜" * (10 - filled)
-    text = (f"📊 *SCORE*\n\n📝 Q: {current}/{total}\n\n{bar}\n\n"
+    text = (f"📊 *SCORE*\n\n Q: {current}/{total}\n\n{bar}\n\n"
             f"✅ Correct: *{c}*\n❌ Wrong: *{w}*\n📈 Accuracy: *{pct}%*\n{FOOTER}")
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
@@ -187,14 +212,14 @@ async def score_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     state = get_user_state(update.effective_user.id)
     c, w, t = state["correct"], state["wrong"], state["timeout_count"]
-    text = (f"🏆 *STATS*\n\n📚 Available: *{len(ALL_QUESTIONS)}*\n"
+    text = (f"🏆 *STATS*\n\n Available: *{len(ALL_QUESTIONS)}*\n"
             f"🧬 Bio: *{len(BIO_QUESTIONS)}* | ⚛️ Phys: *{len(PHYS_QUESTIONS)}*\n\n"
             f"📝 Attempted: *{c + w}*\n✅ Correct: *{c}*\n❌ Wrong: *{w}*\n⏰ Timeout: *{t}*\n{FOOTER}")
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
 
 async def bio_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await _direct_start(update, BIO_QUESTIONS, "Biology", "🧬 BIOLOGY")
+    await _direct_start(update, BIO_QUESTIONS, "Biology", " BIOLOGY")
 
 async def phys_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await _direct_start(update, PHYS_QUESTIONS, "Physics", "⚛️ PHYSICS")
@@ -214,6 +239,7 @@ async def _direct_start(update, questions, subject, title):
     state["wrong"] = 0
     state["timeout_count"] = 0
     state["answered"] = False
+    state["time_left"] = 60
     await update.message.reply_text(f"{title}\n📝 {len(questions)} Qs | ⏱️ 60s\n\nStarting... 🚀{FOOTER}", parse_mode=ParseMode.MARKDOWN)
     await asyncio.sleep(1)
     await _send_q(update, context, update.effective_user.id)
@@ -228,12 +254,19 @@ async def _send_q(update, context, user_id):
     total = len(state["questions"])
     cur = state["current_index"] + 1
     state["answered"] = False
+    state["time_left"] = 60
     em = "🧬" if q["subject"] == "Biology" else "⚛️"
     src = f"\n📌 {q['source']}" if q.get("source") else ""
-    txt = f"{em} *Q{cur}/{total}* | ⏱️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n"
+    
+    # Image questions: send image notice first, then question + options
     if q.get("has_image"):
-        txt = f"🖼️ *Refer to diagram*\n\n{txt}"
-    txt += FOOTER
+        img_txt = f"🖼️ *DIAGRAM / IMAGE*\n━━━━━━━━━━━━━━━━━━━━\n\n📷 *Refer to the diagram shown above*\n\n_(Image-based question from PYQ book)_"
+        await update.message.reply_text(img_txt, parse_mode=ParseMode.MARKDOWN)
+        await asyncio.sleep(0.5)
+        txt = f"{em} *Q{cur}/{total}* | ⏱️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n{FOOTER}"
+    else:
+        txt = f"{em} *Q{cur}/{total}* | ️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n{FOOTER}"
+    
     letters = ["A", "B", "C", "D"]
     kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
     await update.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
@@ -241,8 +274,14 @@ async def _send_q(update, context, user_id):
 
 
 async def _timeout(update, context, user_id):
-    await asyncio.sleep(60)
+    """Animated timer with updates"""
     state = get_user_state(user_id)
+    for seconds in range(60, 0, -1):
+        if state["answered"]:
+            break
+        state["time_left"] = seconds
+        await asyncio.sleep(1)
+    
     if not state["answered"]:
         state["timeout_count"] += 1
         state["wrong"] += 1
@@ -262,7 +301,7 @@ async def _show_results_msg(update, user_id):
     elif pct >= 70: t, e = "⭐ EXCELLENT!", "🥈"
     elif pct >= 50: t, e = "💪 GOOD!", "🥉"
     else: t, e = "🌱 KEEP GOING!", "💪"
-    txt = f"{e} *QUIZ COMPLETE!*\n\n{t}\n\n📝 {total} | ✅ {c} | ❌ {w} | 📈 {pct}%\n{FOOTER}"
+    txt = f"{e} *QUIZ COMPLETE!*\n\n{t}\n\n {total} | ✅ {c} |  {w} | 📈 {pct}%\n{FOOTER}"
     await update.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN)
 
 
@@ -280,7 +319,7 @@ async def restart_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         "🤖 *NEET Quiz Bot*\n📖 Arihant 34 Yrs PYQs\n\n"
-        f"🧬 Bio: *{len(BIO_QUESTIONS)}* | ⚛️ Phys: *{len(PHYS_QUESTIONS)}*\n📋 Total: *{len(ALL_QUESTIONS)}*\n\n"
+        f" Bio: *{len(BIO_QUESTIONS)}* | ⚛️ Phys: *{len(PHYS_QUESTIONS)}*\n📋 Total: *{len(ALL_QUESTIONS)}*\n\n"
         "⏱️ 60s | ✅ Compliments | 🔄 Auto-ping\n\n"
         "💻 Python + Telegram API\n🌐 Render.com\n\n🫠 **MADE BY SPARTA**"
     )
@@ -318,9 +357,10 @@ async def start_quiz(query, context, subject):
     state["current_index"] = 0
     state["correct"] = state["wrong"] = state["timeout_count"] = 0
     state["answered"] = False
+    state["time_left"] = 60
     total = len(state["questions"])
     await query.edit_message_text(
-        f"🎮 *Started!*\n\n📚 {subject} | 📝 {total} Qs | ⏱️ 60s\n\nGoing... 🚀{FOOTER}",
+        f"🎮 *Started!*\n\n {subject} | 📝 {total} Qs | ⏱️ 60s\n\nGoing... 🚀{FOOTER}",
         parse_mode=ParseMode.MARKDOWN)
     await asyncio.sleep(1.5)
     await send_question(query, context)
@@ -335,35 +375,43 @@ async def send_question(query, context):
     total = len(state["questions"])
     cur = state["current_index"] + 1
     state["answered"] = False
-    em = "\U0001f9ec" if q["subject"] == "Biology" else "\u269b\ufe0f"
-    src = f"\n\U0001f4cc {q['source']}" if q.get("source") else ""
-
-    # For image questions: send image notice first, then question+options separately
+    state["time_left"] = 60
+    em = "🧬" if q["subject"] == "Biology" else "️"
+    src = f"\n {q['source']}" if q.get("source") else ""
+    
+    # Image questions: send image notice first, then question + options
     if q.get("has_image"):
-        img_txt = f"\U0001f5bc\ufe0f *DIAGRAM / IMAGE*\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\U0001f4f7 *Refer to the diagram shown above*\n\n_(Image-based question from PYQ book)_"
+        img_txt = f"🖼️ *DIAGRAM / IMAGE*\n━━━━━━━━━━━━━━━━━━━━\n\n📷 *Refer to the diagram shown above*\n\n_(Image-based question from PYQ book)_"
         try:
             await query.edit_message_text(img_txt, parse_mode=ParseMode.MARKDOWN)
         except:
             await query.message.reply_text(img_txt, parse_mode=ParseMode.MARKDOWN)
         await asyncio.sleep(0.5)
-        txt = f"{em} *Q{cur}/{total}* | \u23f1\ufe0f 60s\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n{q['question']}{src}\n{FOOTER}"
+        txt = f"{em} *Q{cur}/{total}* | ⏱️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n{FOOTER}"
         letters = ["A", "B", "C", "D"]
         kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
         await query.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
     else:
-        txt = f"{em} *Q{cur}/{total}* | \u23f1\ufe0f 60s\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n{q['question']}{src}\n{FOOTER}"
+        txt = f"{em} *Q{cur}/{total}* | ⏱️ 60s\n━━━━━━━━━━━━━━━━━━━━\n\n{q['question']}{src}\n{FOOTER}"
         letters = ["A", "B", "C", "D"]
         kb = [[InlineKeyboardButton(f"{letters[i]}. {o[:80]}", callback_data=f"ans_{i}")] for i, o in enumerate(q["options"])]
         try:
             await query.edit_message_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
         except:
             await query.message.reply_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
-
+    
     state["timer_task"] = asyncio.create_task(question_timeout(query, context, query.from_user.id))
 
+
 async def question_timeout(query, context, user_id):
-    await asyncio.sleep(60)
+    """Animated timer countdown"""
     state = get_user_state(user_id)
+    for seconds in range(60, 0, -1):
+        if state["answered"]:
+            break
+        state["time_left"] = seconds
+        await asyncio.sleep(1)
+    
     if not state["answered"]:
         state["timeout_count"] += 1
         state["wrong"] += 1
@@ -416,13 +464,13 @@ async def show_results(query, context):
     elif pct >= 70: title, emoji = "⭐ EXCELLENT!", "🥈"
     elif pct >= 50: title, emoji = "💪 GOOD!", "🥉"
     elif pct >= 30: title, emoji = "📚 AVERAGE!", "📖"
-    else: title, emoji = "🌱 KEEP GOING!", "💪"
+    else: title, emoji = " KEEP GOING!", "💪"
     txt = (f"{emoji} *QUIZ COMPLETE!*\n\n{title}\n\n━━━━━━━━━━━━━━━━━━━━\n"
            f"📝 Total: *{total}*\n✅ Correct: *{c}*\n❌ Wrong: *{w}*\n⏰ Timeout: *{t}*\n📈 Score: *{pct}%*\n\n"
            f"━━━━━━━━━━━━━━━━━━━━\n🎮 Play Again:\n")
     kb = [[InlineKeyboardButton("🧬 Biology", callback_data="replay_Biology"),
            InlineKeyboardButton("⚛️ Physics", callback_data="replay_Physics")],
-          [InlineKeyboardButton("🎯 Both", callback_data="replay_Both")]]
+          [InlineKeyboardButton(" Both", callback_data="replay_Both")]]
     txt += FOOTER
     try:
         await query.edit_message_text(txt, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb))
@@ -431,8 +479,7 @@ async def show_results(query, context):
 
 # ==================== BOT INIT ====================
 async def post_init(application):
-    # Removed command menu as per user request
-    # Delete existing commands from bot
+    # Remove any existing commands
     await application.bot.delete_my_commands()
     print("✅ Command menu removed!", flush=True)
 
