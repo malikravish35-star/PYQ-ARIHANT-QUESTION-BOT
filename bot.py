@@ -7,6 +7,10 @@ import json
 import random
 import asyncio
 import os
+import threading
+import time
+import requests
+from http.server import HTTPServer, BaseHTTPRequestHandler
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application,
@@ -22,6 +26,51 @@ with open("questions.json", "r", encoding="utf-8") as f:
 
 BIO_QUESTIONS = [q for q in ALL_QUESTIONS if q["subject"] == "Biology"]
 PHYS_QUESTIONS = [q for q in ALL_QUESTIONS if q["subject"] == "Physics"]
+
+# ==================== AUTO-PING / KEEP ALIVE ====================
+RENDER_URL = os.environ.get("RENDER_EXTERNAL_URL", "")
+
+class KeepAliveHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"🤖 NEET Quiz Bot is ALIVE! | MADE BY SPARTA 🫠")
+
+    def log_message(self, format, *args):
+        pass  # Suppress logs
+
+def run_health_server():
+    """Run a simple HTTP server for health checks"""
+    port = int(os.environ.get("PORT", 8000))
+    server = HTTPServer(("0.0.0.0", port), KeepAliveHandler)
+    print(f"🌐 Health server running on port {port}")
+    server.serve_forever()
+
+def auto_ping():
+    """Ping the bot's own URL every 5 minutes to keep alive on Render"""
+    while True:
+        time.sleep(300)  # 5 minutes
+        if RENDER_URL:
+            try:
+                resp = requests.get(f"{RENDER_URL}/", timeout=10)
+                print(f"🔄 Auto-ping: {resp.status_code} - Bot alive!")
+            except Exception as e:
+                print(f"⚠️ Auto-ping failed: {e}")
+        else:
+            print("🔄 Auto-ping: No RENDER_EXTERNAL_URL set, skipping")
+
+def start_keep_alive():
+    """Start health server and auto-ping in background threads"""
+    # Start health check server
+    server_thread = threading.Thread(target=run_health_server, daemon=True)
+    server_thread.start()
+    
+    # Start auto-ping thread
+    ping_thread = threading.Thread(target=auto_ping, daemon=True)
+    ping_thread.start()
+    
+    print("✅ Keep-alive system started (Health server + Auto-ping every 5 min)")
 
 # ==================== COMPLIMENTS ====================
 COMPLIMENTS = [
@@ -326,8 +375,6 @@ async def handle_answer(query, context, selected):
     correct_letter = ["A", "B", "C", "D"][correct]
     selected_letter = ["A", "B", "C", "D"][selected]
 
-    letters = ["A", "B", "C", "D"]
-
     if selected == correct:
         state["correct"] += 1
         compliment = random.choice(COMPLIMENTS)
@@ -455,6 +502,9 @@ def main():
     print(f"🧬 Biology: {len(BIO_QUESTIONS)}")
     print(f"⚛️ Physics: {len(PHYS_QUESTIONS)}")
     print("🫠 MADE BY SPARTA")
+
+    # Start keep-alive system (health server + auto-ping every 5 min)
+    start_keep_alive()
 
     app = Application.builder().token(TOKEN).build()
 
