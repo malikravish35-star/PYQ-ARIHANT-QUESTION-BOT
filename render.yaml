@@ -1,1 +1,11 @@
-web: python bot.py
+services:
+  - type: web
+    name: PYQ-ARIHANT-QUESTION-BOT
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+    plan: free
+    region: oregon
