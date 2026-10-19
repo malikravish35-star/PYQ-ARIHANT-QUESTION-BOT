@@ -10,8 +10,7 @@
     "answer": "c",
     "source": "NEET 2016, Phase II",
     "subject": "Biology",
-    "has_image": false,
-    "id": 1
+    "has_image": false
   },
   {
     "question": "(i) Temperature of about 25°C (ii) Temperature of about 5°C (iii) Relative humidity of about 5% (iv) Relative humidity of about 95% (v) A shady place (vi) A brightly illuminated place Choose the answer from the following options",
@@ -24,8 +23,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2006",
     "subject": "Biology",
-    "has_image": false,
-    "id": 2
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Gregarious, polyphagous pest1. Asterias B. Adult with radi symmetry and larvawith bilateralsymmetry2. Scorpion C. Book lungs 3. Ctenoplana D. Bioluminescence 4. Locusta AB C D",
@@ -38,8 +36,7 @@
     "answer": "a",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 3
+    "has_image": false
   },
   {
     "question": "List-I List-II A. Metamerism 1. Coelenterata B. Canal system 2. Ctenophora C. Comb plates 3. Annelida D. Cnidoblasts 4. Porifera Choose the correct answer from the options given below. AB C D",
@@ -52,8 +49,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 4
+    "has_image": true
   },
   {
     "question": "Column I Column II A. Pila (i) Flame cells B. Bombyx (ii) Comb plates C. Pleurobrachia (iii) Radula D. Taenia (iv) Malpighian tubules Select the correct option from the following : AB C D",
@@ -66,8 +62,7 @@
     "answer": "a",
     "source": "NEET (National) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 5
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Family 1. Diptera B. Order 2. Arthropoda C. Class 3. Muscidae D. Phylum 4. Insecta Codes AB C D",
@@ -80,8 +75,7 @@
     "answer": "a",
     "source": "NEET 2016, Phase II",
     "subject": "Biology",
-    "has_image": false,
-    "id": 6
+    "has_image": false
   },
   {
     "question": "List-I List-II A. Physalia 1. Pearl oyster B. Limulus 2. Portuguese Man of War C. Ancylostoma 3. Living fossil D. Pinctada 4. Hookworm Choose the correct answer from the options given below. AB C D",
@@ -94,8 +88,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 7
+    "has_image": true
   },
   {
     "question": "Genus Name Two characters Phylum",
@@ -108,8 +101,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2012",
     "subject": "Biology",
-    "has_image": false,
-    "id": 8
+    "has_image": false
   },
   {
     "question": "I. Metagenesis is observed in helminths. II. Echinoderms are triploblastic and coelomate animals. III. Round worms have organ-system level of bodyorganisation. IV. Comb plates present in ctenophores help in digestion. V. Water vascular system is characteristic of echinoderms. Choose the correct answ",
@@ -122,8 +114,7 @@
     "answer": "d",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 9
+    "has_image": true
   },
   {
     "question": "Column I Column II 1. Ophiura (i) Mollusca 2. Physalia (ii) Platyhelminthes 3. Pinctada (iii) Echinodermata 4. Planaria (iv) Coelenterata Select the correct option from the following 12 3 4",
@@ -136,8 +127,7 @@
     "answer": "b",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 10
+    "has_image": false
   },
   {
     "question": "I. In Urochordata notochord extends from head to tail and it is present throughout their life. II. In Vertebrata, notochord is present during the embryonic period only. III. Ce ntral nervous system is dorsal and hollow. IV. Chordata is divided into 3 subphyla, Hemichordata, Tunicata and Cephalochord",
@@ -150,8 +140,7 @@
     "answer": "c",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 11
+    "has_image": false
   },
   {
     "question": "A. Organ system level of organisation B. Bilateral symmetry C. True coelomates with segmentation of body Select the correct option ofanimal groups which possess allthe above characteristics.",
@@ -164,8 +153,7 @@
     "answer": "d",
     "source": "NEET (National) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 12
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Aptenodytes 1. Flying fox B. Pteropus 2. Angel fish C. Pterophyllum 3. Lamprey D. Petromyzon 4. Penguin Codes AB C D",
@@ -178,8 +166,7 @@
     "answer": "c",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 13
+    "has_image": false
   },
   {
     "question": "Column I Column II Column III",
@@ -192,8 +179,7 @@
     "answer": "a",
     "source": "NEET 2013",
     "subject": "Biology",
-    "has_image": false,
-    "id": 14
+    "has_image": false
   },
   {
     "question": "Animals Morphological features (i) Crocodile — Four-chambered heart (ii) Sea urchin — Parapodia (iii) Obelia — Metagenesis (iv) Lemur — Thecodont",
@@ -206,8 +192,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2007",
     "subject": "Biology",
-    "has_image": false,
-    "id": 15
+    "has_image": false
   },
   {
     "question": "Column-I (Organisms)Column-II (Characteristics) A. Platyhelminthes 1. Cylindrical body with no segmentation B. Echinoderms 2. Warm blooded animals with directdevelopment C. Hemichordates 3. Bilateral symmetry with incompletedigestive system D. Aves 4. Radial symmetry with indirectdevelopment Codes A",
@@ -220,8 +205,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 16
+    "has_image": false
   },
   {
     "question": "(i) silver fish — trachea (ii) scorpion — book lung (iii) sea squirt — pharyngeal gills (iv) dolphin — skin The correct matchings are",
@@ -234,8 +218,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2003",
     "subject": "Biology",
-    "has_image": false,
-    "id": 17
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Basal (i) Mustard 2. Axile (ii) China rose3. Parietal (iii) Dianthus 4. Free-central (iv) Sunflower Select the correct option from the following 12 3 4",
@@ -248,8 +231,7 @@
     "answer": "c",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 18
+    "has_image": false
   },
   {
     "question": "(i) In both fruit is a drupe (ii) Endocarp is edible in both (iii) Mesocarp in coconut is fibrous and in mango it is fleshy (iv) In both, fruit develops from monocarpellary ovary Select the correct option.",
@@ -262,8 +244,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 19
+    "has_image": false
   },
   {
     "question": "The attachment point of funicle and body of ovule is known as hilum. It is thepoint where ovule attaches to the base.It is generally present as an eye of theseed as it is present as a scar.84 Persistent nucellus in the seed is known as [NEET (National) 2019)",
@@ -276,8 +257,7 @@
     "answer": "a",
     "source": "",
     "subject": "Biology",
-    "has_image": false,
-    "id": 20
+    "has_image": false
   },
   {
     "question": "Column I Column II A. 1. Brassicac eae B. 2. Liliaceae C. 3. Fabaceae D. 4. Solanacea e Select the correct answer from the options given below. AB C D",
@@ -290,8 +270,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 21
+    "has_image": true
   },
   {
     "question": "List-I List-II A.Cells with active cell division capacity1. Vascular tissues B.Tissue having all cells similar in structureand function2. Meristema tic tissue C.Tissue having different types ofcells3. Sclereids D.Dead cells with highly thickened walls andnarrow lumen4. Simple tissue Select the corre",
@@ -304,8 +283,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 22
+    "has_image": true
   },
   {
     "question": "I. Secondary cortex II. Wood III. Secondary phloem IV. Phellem The correct order is",
@@ -318,8 +296,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2015",
     "subject": "Biology",
-    "has_image": false,
-    "id": 23
+    "has_image": false
   },
   {
     "question": "I. Large number of scattered vascular bundles surroundedby bundle sheath. II. Large conspicuous parenchymatous groundtissue. III. Vascular bundles conjoint and closed. IV. Phloem parenchyma absent. Identify the category of plant and its part.",
@@ -332,8 +309,7 @@
     "answer": "d",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 24
+    "has_image": false
   },
   {
     "question": "I. It serves as a covering for mouth. II. It helps to open cracks in the soil into which it can crawl. III. lt is one of the sensory structures. IV. It is the first body segment. Choose the correct answer from the options given below",
@@ -346,8 +322,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 25
+    "has_image": true
   },
   {
     "question": "Column I Column II A. Grinding of the food particles1. Hepatic caecal B. Secrete gastric juice2. 10th segment C. 10 pairs 3. Proventriculus D. Anal cerci 4. Spiracles 5. Alary muscles Codes AB C D",
@@ -360,8 +335,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 26
+    "has_image": false
   },
   {
     "question": "I. Frog is a poikilotherm. II. Frog does not have any coronary circulation. III. Heart is myogenic in nature. IV. Heart is autoexcitable.",
@@ -374,8 +348,7 @@
     "answer": "d",
     "source": "NEET 2017",
     "subject": "Biology",
-    "has_image": false,
-    "id": 27
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Smooth Endoplasmic Reticulum1. Protein synthesis B. Rough endoplasmicreticulum2. Lipid synthesis C. Golgi complex 3. Glycosylation D. Centriole 4. Spindle formation Codes AB C D",
@@ -388,8 +361,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 28
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Golgi apparatus(i) Synthesis of protein 2. Lysosomes (ii) Trap waste and excretory products 3. Vacuoles (iii) Formation of glycoproteins andglycolipids 4. Ribosomes (iv) Digesting biomolecules Select the correct option from the following 12 3 4",
@@ -402,8 +374,7 @@
     "answer": "a",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 29
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Thylakoids 1. Disc-shaped sacs in Golgiapparatus B. Cristae 2. Condensed structure of DNA C. Cisternae 3. Flat membranoussacs in stroma D. Chromatin 4. Infoldings in mitochondria Codes AB C D",
@@ -416,8 +387,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2015",
     "subject": "Biology",
-    "has_image": false,
-    "id": 30
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Centriole 1. Infoldings in mitochondria B. Chlorophyll 2. Thylakoids C. Cristae 3. Nucleic acids D. Ribozymes 4. Basal body of cilia or flagella Codes AB C D",
@@ -430,8 +400,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2014",
     "subject": "Biology",
-    "has_image": false,
-    "id": 31
+    "has_image": false
   },
   {
     "question": "I. Lipids having only single bonds are called unsaturatedfatty acids. II. Lecithin is a phospholipid. III. Trihydroxy propane is glycerol. IV. Palmitic acid has 20 carbon atoms including carboxylcarbon. V. Arachidonic acid has 16 carbon atoms. Choose the correct answer from the options given below",
@@ -444,8 +413,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 32
+    "has_image": true
   },
   {
     "question": "List-I List-II A. Protein 1. C ==C double bonds B. Unsaturated fatty acid2. Phosphodiester bonds C. Nucleic acid 3. Glycosidic bonds D. Polysaccharide 4. Peptide bonds Choose the correct answer from the options given below. AB C D",
@@ -458,8 +426,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 33
+    "has_image": true
   },
   {
     "question": "Column I Column II A. Aquaporin (i) Amide B. Asparagine (ii) Polysaccharide C. Abscisic acid (iii) Polypeptide D. Chitin (iv) Carotenoids Select the correct option. AB C D",
@@ -472,8 +439,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 34
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Inhibitor of catalytic activity1. Ricin B. Possess peptide bonds2. Malonate C. Cell wall material in fungi3. Chitin D. Secondary metabolite4. Collagen Choose the correct option. AB C D",
@@ -486,8 +452,7 @@
     "answer": "d",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 35
+    "has_image": false
   },
   {
     "question": "(A) Coenzyme or metal ion that is tightly bound to enzymeprotein is called prostheticgroup. (B) A complete catalytic active enzyme with its boundprosthetic group is calledapoenzyme. Select thecorrect option.",
@@ -500,8 +465,7 @@
     "answer": "a",
     "source": "NEET (National) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 36
+    "has_image": false
   },
   {
     "question": "What do the two axis ( Xand Y) represent? X-axis Y-axis",
@@ -514,8 +478,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2011",
     "subject": "Biology",
-    "has_image": false,
-    "id": 37
+    "has_image": false
   },
   {
     "question": "List-I List-II A. S-phase 1. Proteins are synthesised B. G2-phase 2. Inactive phase C. Quiescent stage3. Interval between mitosis and initiationof DNA replication D. G 1-phase 4. DNA replication Choose the correct answer from the options given below. AB C D",
@@ -528,8 +491,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 38
+    "has_image": true
   },
   {
     "question": "Column I Column II A. G1-phase 1. Cell grows and organelleduplication B. S phase 2. DNA replication and chromosomeduplication C. G 2-phase 3. Cytoplasmic growth D. Metaphase in M-phase4. Alignment of chromosomes Codes AB C D",
@@ -542,8 +504,7 @@
     "answer": "d",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 39
+    "has_image": false
   },
   {
     "question": "NEET Chapterwise Topicwise Biology AB",
@@ -556,8 +517,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2010",
     "subject": "Biology",
-    "has_image": false,
-    "id": 40
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Zygotene 1. Terminalisation B. Pachytene 2. Chiasmata C. Diplotene 3. Crossing over D. Diakinesis 4. Synapsis Select the correct option. AB C D",
@@ -570,8 +530,7 @@
     "answer": "a",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 41
+    "has_image": false
   },
   {
     "question": "I. Crossing over II. Synapsis III. Terminalisation of chiasmata IV. Disapperance of nucleolus",
@@ -584,8 +543,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2015",
     "subject": "Biology",
-    "has_image": false,
-    "id": 42
+    "has_image": false
   },
   {
     "question": "List-I List-II A. Cohesion 1. More attraction in liquid phase B. Adhesion 2. Mutual attraction among watermolecules C. Surface tension3. Water loss in liquid phase D. Guttation 4. Attraction towards polar surfaces Choose the correct answer from the options given below. AB C D",
@@ -598,8 +556,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 43
+    "has_image": true
   },
   {
     "question": "Column I Column II A. Iron 1. Photolysis of water B. Zinc 2. Pollen germination C. Boron 3. Required for chlorophyllbiosynthesis D. Manganese 4. IAA biosynthesis Select the correct option. AB C D",
@@ -612,8 +569,7 @@
     "answer": "b",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 44
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Nitrococcus 1. Denitrification B. Rhizobium 2. Conversion of ammonia tonitrite C. Thiobacillus 3. Conversion of nitrite to nitrate D. Nitrobacter 4. Conversion of atmosphericnitrogen toammonia Choose the correct answer from options given below. AB C D",
@@ -626,8 +582,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 45
+    "has_image": true
   },
   {
     "question": "Arrows numbered 4, 8 and 12 can all be",
@@ -640,8 +595,7 @@
     "answer": "b",
     "source": "NEET 2013",
     "subject": "Biology",
-    "has_image": false,
-    "id": 46
+    "has_image": false
   },
   {
     "question": "I. Vitamin-A derivatives are formed from carotene. II. The photopigments are embedded in the membrane discs of the inner segment. III. Retinal is a derivative of vitamin-A. IV. Retinal is a light absorbing part of all the visual photopigments.",
@@ -654,8 +608,7 @@
     "answer": "b",
     "source": "NEET 2017",
     "subject": "Biology",
-    "has_image": false,
-    "id": 47
+    "has_image": false
   },
   {
     "question": "I. Contraction of diaphragm. II. Contraction of external inter-costal muscles. III. Pulmonary volume decreases. IV. Intra pulmonary pressure increases.",
@@ -668,8 +621,7 @@
     "answer": "d",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 48
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Pneumotaxic centre1. Alveoli B.O2dissociation curve2. Pons region of brain C. Carbonic anhydrase3. Haemoglobin D. Primary site of exchange of gases4. RBC Codes ABC D",
@@ -682,8 +634,7 @@
     "answer": "b",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 49
+    "has_image": false
   },
   {
     "question": "Increase in red blood cell size 2. Increase in red blood cell production 3. Increased breathing rate 4. Increase in thrombocyte count Changes occurring are [CBSE AIPMT 2010]",
@@ -696,8 +647,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2010",
     "subject": "Biology",
-    "has_image": false,
-    "id": 50
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Eosinophils 1. Immune response B. Basophils 2. Phagocytosis C. Neutrophils 3. Release histaminase destructive enzymes D. Lymphocytes 4. Release granules containing histamine AB CD",
@@ -710,8 +660,7 @@
     "answer": "d",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 51
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Fibrinogen (i) Osmotic balance 2. Globulin (ii) Blood clotting3. Albumin (iii) Defence mechanism 12 3",
@@ -724,8 +673,7 @@
     "answer": "d",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 52
+    "has_image": false
   },
   {
     "question": "(II) They are somatic cells. (III) They do not metabolise. (IV) All their internal space is available for oxygen transport. Codes",
@@ -738,8 +686,7 @@
     "answer": "a",
     "source": "NEET 2017",
     "subject": "Biology",
-    "has_image": false,
-    "id": 53
+    "has_image": false
   },
   {
     "question": "Body Fluids and Circulation 173 Structure of Human Circulatory System Blood vessels TOPIC 3 A B CD",
@@ -752,8 +699,7 @@
     "answer": "c",
     "source": "NEET 2013",
     "subject": "Biology",
-    "has_image": false,
-    "id": 54
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Podocytes i. Crystallised oxalates 2. Protonephridia ii. Annelids3. Nephridia iii. Amphioxus4. Renal calculi iv. Filtration slits Select the correct option from the following 12 3 4",
@@ -766,8 +712,7 @@
     "answer": "c",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 55
+    "has_image": false
   },
   {
     "question": "Column-I (Function)Column-II (Part of Excretory System) 1. Ultrafiltration i. Henle’s loop 2. Concentration of urineii. Ureter 3. Transport of urineiii. Urinary bladder 4. Storage of urineiv. Malpighian corpuscle v. Proximal convolutedtubule 12 3 4",
@@ -780,8 +725,7 @@
     "answer": "b",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 56
+    "has_image": false
   },
   {
     "question": "I. close proximity between Henle’s loop and vasa recta II. counter-current mechanism III. selective secretion of HCO3−and hydrogen ions in PCT. IV. higher blood pressure in glomerular capillaries",
@@ -794,8 +738,7 @@
     "answer": "d",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 57
+    "has_image": false
   },
   {
     "question": "A. Nitrogenous waste build-up in the body B. Non-elimination of excess potassium ions C. Reduced absorption of calcium ions from gastrointestinal tract D. Reduced RBC production Which of the following options is the most appropriate?",
@@ -808,8 +751,7 @@
     "answer": "b",
     "source": "NEET (National) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 58
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Glycosuria (i) Accumulation of uric acid in joints. 2. Gout (ii) Mass of crystallised saltswithin the kidney. 3. Renal calculi(iii) Inflammation in glomeruli 4. Glomerular nephritis(iv) Presence of glucose in urine.12 3 4",
@@ -822,8 +764,7 @@
     "answer": "d",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 59
+    "has_image": false
   },
   {
     "question": "I. ‘H’ zone disappears II. ‘A’ band widens III. ‘I’ band reduces in width IV. Myosine hydrolyses ATP, releasing the ADP and Pi V. Z-lines attached to actins are pulled inwards.Choose the correct answer fromthe options given below.",
@@ -836,8 +777,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 60
+    "has_image": true
   },
   {
     "question": "List I List II A. Scapula 1. Cartilaginous joints B. Cranium 2. Flat bone C. Sternum 3. Fibrous joints D. Vertebral column4. Triangular flat bone Choose the correct answer from the options given below. AB CD",
@@ -850,8 +790,7 @@
     "answer": "d",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 61
+    "has_image": true
   },
   {
     "question": "Column I Column II 1. Gliding joint(i) Between carpal and metacarpalof thumb 2. Hinge joint (ii) Between atlas and axis 3. Pivot joint (iii) Between the carpals 4. Saddle joint(iv) Between humerus and ulna Select the correct option from the following 12 3 4",
@@ -864,8 +803,7 @@
     "answer": "a",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 62
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Gout 1. Decreased levels of estrogen B. Osteoporosis 2. Low Ca2+ions in the blood C. Tetany 3. Accumulation of uric acid crystals D. Muscular dystrophy4. Autoimmune disorder Codes AB CD",
@@ -878,8 +816,7 @@
     "answer": "b",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 63
+    "has_image": false
   },
   {
     "question": "Central nervous system is mostly madeup of association neurons. 39 Ivan Pavlov performed experiments on",
@@ -892,8 +829,7 @@
     "answer": "b",
     "source": "",
     "subject": "Biology",
-    "has_image": false,
-    "id": 64
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Rods and cones1. Absence of photoreceptorcells B. Blind spot 2. Cones are densely packed C. Fovea 3. Photoreceptor cells D. Iris 4. Visible coloured portion of the eye Codes AB CD",
@@ -906,8 +842,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 65
+    "has_image": false
   },
   {
     "question": "Which one of the followingoptions correctly represents thenames of three different parts?",
@@ -920,8 +855,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2008",
     "subject": "Biology",
-    "has_image": false,
-    "id": 66
+    "has_image": false
   },
   {
     "question": "Rod cells Cone cells",
@@ -934,8 +868,7 @@
     "answer": "a",
     "source": "CBSE AIPMT 2008",
     "subject": "Biology",
-    "has_image": false,
-    "id": 67
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Pituitary hormone1. Steroid B. Epinephrine 2. Neuropeptides C. Endorphins 3. Peptides, proteins D. Cortisol 4. Biogenic amines AB CD",
@@ -948,8 +881,7 @@
     "answer": "b",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 68
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Pituitary gland1. Grave’s disease B. Thyroid gland2. Diabetes mellitus C. Adrenal gland3. Diabetes insipidus D. Pancreas 4. Addison’s disease AB CD",
@@ -962,8 +894,7 @@
     "answer": "b",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 69
+    "has_image": false
   },
   {
     "question": "Gland Secretion Effect on body A Oestrogen Maintenance of secondary sexualcharacters Alpha cells of islets of Langerhans B Raises blood sugar level Anterior pituitary C Over secretion leads togigantism AB C",
@@ -976,8 +907,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2011",
     "subject": "Biology",
-    "has_image": false,
-    "id": 70
+    "has_image": false
   },
   {
     "question": "A. Insulin (i) Addison's disease B. Thyroxin (ii) Diabetes insipidus C. Corticoids (iii) Acromegaly D. Growth hormone(iv) Goitre (v) Diabetes mellitus Select the correct option. AB CD",
@@ -990,8 +920,7 @@
     "answer": "b",
     "source": "NEET (National) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 71
+    "has_image": false
   },
   {
     "question": "I. a low metabolic rate II. increase in body weight III. tendency to retain water in tissues is",
@@ -1004,8 +933,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2009",
     "subject": "Biology",
-    "has_image": false,
-    "id": 72
+    "has_image": false
   },
   {
     "question": "I. Pollen grains inside the anther. II. Germinated pollen grain with two male gametes. III. Seed inside the fruit. IV. Embryo sac inside the ovule .",
@@ -1018,8 +946,7 @@
     "answer": "c",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 73
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Placenta 1. Androgens B. Zona pellucida 2. Human Chorinoic Gonadotropin (h CG) C. Bulbourethral glands3. Layer of the ovum D. Leydig cells 4. Lubrication of the penis AB CD",
@@ -1032,8 +959,7 @@
     "answer": "c",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 74
+    "has_image": false
   },
   {
     "question": "NEET Chapterwise Topicwise Biology BA FEC DA B C D A BC D",
@@ -1046,8 +972,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2009",
     "subject": "Biology",
-    "has_image": false,
-    "id": 75
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Proliferative phasei. Breakdown of endometriallining 2. Secretory phaseii. Follicular phase 3. Menstruation iii. Luteal phase 12 3",
@@ -1060,8 +985,7 @@
     "answer": "a",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 76
+    "has_image": false
   },
   {
     "question": "During ovulation, the mature follicle or Graafian follicle bursts and the ovum isreleased. This is named as corpus luteum which serves as a temporary endocrine gland by releasingprogesterone and oestrogen. 41 If mammalian ovum fails to get fertilised, which one of thefollowing is unlikely?",
@@ -1074,8 +998,7 @@
     "answer": "b",
     "source": "",
     "subject": "Biology",
-    "has_image": false,
-    "id": 77
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Mons pubis 1. Embryo formation B. Antrum 2. Sperm C. Trophecto derm3. Female external genitalia D. Nebenkern 4. Graafian follicle Codes AB CD",
@@ -1088,8 +1011,7 @@
     "answer": "b",
     "source": "NEET 2016, Phase II",
     "subject": "Biology",
-    "has_image": false,
-    "id": 78
+    "has_image": false
   },
   {
     "question": "Method Mode of Action A. The pill (i) Prevents sperms reaching cervix B. Condom (ii) Prevents implantation C. Vasectomy (iii) Prevents ovulation D. Copper-T (iv) Semen contains no sperms AB CD",
@@ -1102,8 +1024,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2008",
     "subject": "Biology",
-    "has_image": false,
-    "id": 79
+    "has_image": false
   },
   {
     "question": "I. Using sterile needles. II. Transfusion of blood from infected person. III. Infected mother to foetus. IV. Kissing. V. Inheritance.Choose the correct answer from the options given below",
@@ -1116,8 +1037,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 80
+    "has_image": true
   },
   {
     "question": "Column I Column II (A) Gonorrhea 1. HIV (B) Syphilis 2. Neisseria (C) Genital Warts 3. Treponema (D) AIDS 4. Human Papilloma Virus Codes AB CD",
@@ -1130,8 +1050,7 @@
     "answer": "a",
     "source": "NEET 2017",
     "subject": "Biology",
-    "has_image": false,
-    "id": 81
+    "has_image": false
   },
   {
     "question": "Dominance 2. Codominance 3. Multiple allele 4. Incomplete dominance 5. Polygenic inheritance",
@@ -1144,8 +1063,7 @@
     "answer": "b",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 82
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Dominance 1. Many genes govern a singlecharacter B. Codominance 2. In a heterozygous organism only oneallele expressesitself C. Pleiotropy 3. In a heterozygous organism bothalleles expressthemselves fully D. Polygenic inheritance4. A single gene influences manycharacters Code AB",
@@ -1158,8 +1076,7 @@
     "answer": "a",
     "source": "NEET 2016, Phase I",
     "subject": "Biology",
-    "has_image": false,
-    "id": 83
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. XX-XO method of sex-determinationi. Turner’s syndrome 2. XX-XY method of sex-determinationii. Female heterogamety 3. Karyotype-45 iii. Grasshopper4. ZW-ZZ method of sex- determinationiv. Female homogamety Select the correct option from the following 12 3 4",
@@ -1172,8 +1089,7 @@
     "answer": "c",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 84
+    "has_image": false
   },
   {
     "question": "Principles of Inheritance and Variation 255",
@@ -1186,8 +1102,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 1994",
     "subject": "Biology",
-    "has_image": false,
-    "id": 85
+    "has_image": false
   },
   {
     "question": "NEET Chapterwise Topicwise Biology Genetic Disorders TOPIC 5Hb AHb S Hb AHb SHb AHb S Hb AHb S Hb Hb AA unaffected Hb Hb AS unaffected and carrier Hb Hb AS unaffected and carrier Hb Hb SS affected Parents Gametes F progeny1×",
@@ -1200,8 +1115,7 @@
     "answer": "c",
     "source": "NEET 2017",
     "subject": "Biology",
-    "has_image": false,
-    "id": 86
+    "has_image": false
   },
   {
     "question": "I. Haemophilia is a sex-linked recessive disease. II. Down's syndrome is due to aneuploidy. III. Phenylketonuria is an autosomal recessive gene disorder. IV. Sickle-cell anaemia is an X - linked recessive gene disorder.",
@@ -1214,8 +1128,7 @@
     "answer": "c",
     "source": "NEET 2016, Phase I",
     "subject": "Biology",
-    "has_image": false,
-    "id": 87
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Typhoid 1. Haemophilus influenzae B. Malaria 2. Wuchereria bancrofti C. Pneumonia 3. Plasmodium vivax D. Filariasis 4. Salmonella typhi Codes AB CD",
@@ -1228,8 +1141,7 @@
     "answer": "a",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 88
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Amoebiasis (i) Treponema pallidum B. Diphtheria (ii) Use only sterilised food and water C. Cholera (iii) DPT vaccine D. Syphilis (iv) Use oral rehydrationtherapy",
@@ -1242,8 +1154,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2008",
     "subject": "Biology",
-    "has_image": false,
-    "id": 89
+    "has_image": false
   },
   {
     "question": "I. Utilises genetically modified crops like Btcotton. II. Uses only naturally produced inputs like compost. III. Does not use pesticides and urea. IV. Produces vegetables rich in vitamins and minerals.Which of the above statements are correct?",
@@ -1256,8 +1167,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2011",
     "subject": "Biology",
-    "has_image": false,
-    "id": 90
+    "has_image": false
   },
   {
     "question": "List-I List-II A.Aspergillus niger 1. Acetic Acid B.Acetobacter aceti 2. Lactic Acid C.Clostridium butylicum3. Citric Acid D.Lactobacillus 4. Butyric Acid Choose the correct answer from the options given below. ABCD A BCD",
@@ -1270,8 +1180,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Biology",
-    "has_image": true,
-    "id": 91
+    "has_image": true
   },
   {
     "question": "Column I Column II A. Clostridium butylicum1. Cyclosporin-A B. Trichoderma polysporum2. Butyric acid C. Monascus purpureus3. Citric acid D. Aspergillus niger 4. Blood cholesterolloweringagent AB CD",
@@ -1284,8 +1193,7 @@
     "answer": "a",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 92
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Citric acid 1. Trichoderma B. Cyclosporin 2. Clostridium C. Statins 3. Aspergillus D. Butyric acid 4. Monascus Codes AB CD",
@@ -1298,8 +1206,7 @@
     "answer": "b",
     "source": "NEET 2016, Phase II",
     "subject": "Biology",
-    "has_image": false,
-    "id": 93
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Dragonflies 1. Biocontrol agents of several plant pathogens B. Bacillus thuringiensis2. Get rid of Aphids and mosquitoes C. Glomus 3. Narrow spectrum Insecticidal applications D. Baculoviruses 4. Biocontrol agents of lepidopteran plant pests 5. Absorb phosphorus from soil Codes",
@@ -1312,8 +1219,7 @@
     "answer": "d",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 94
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Bioreactor (i) Separation of DNA fragments B. Electroph-or esis(ii) Production of large quantities of products C. PCR (iii) Detection of pathogen, based onantigen-antibodyreaction D. ELISA (iv) Amplification of nucleic acids Select the correct option. AB CD",
@@ -1326,8 +1232,7 @@
     "answer": "b",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 95
+    "has_image": false
   },
   {
     "question": "Column I Column II A.Btcotton 1. Gene therapy B.Adenosine deaminase deficiency2. Cellular defence C. RNAi 3. Detection of HIV infection D. PCR 4. Bacillus thuringiensis AB CD",
@@ -1340,8 +1245,7 @@
     "answer": "d",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 96
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Bacillus thuringiensis1. Cloning vector B. Thermus aquaticus2. Construction of first r DNA molecule C. Agrobacterium tumefaciens3. DNA polymerase D. Salmonella typhimurium4. Cry proteins Select the correct option. AB CD",
@@ -1354,8 +1258,7 @@
     "answer": "a",
     "source": "NEET (Sep.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 97
+    "has_image": false
   },
   {
     "question": "Column I Column II 1. Halophiles i. Hot springs2. Thermoacidophiles ii. Aquatic environment 3. Methanogens iii. Guts of ruminants 4. Cyanobacteria iv. Salty area Select the correct option from the following 12 3 4",
@@ -1368,8 +1271,7 @@
     "answer": "a",
     "source": "NEET (Odisha) 2019",
     "subject": "Biology",
-    "has_image": false,
-    "id": 98
+    "has_image": false
   },
   {
     "question": "Column I Column II A.Herbivores-Plants (i) Commensalism B.Mycorrhiza-Plants (ii) Mutualism C.Sheep-Cattle (iii) Predation D.Orchid-Tree (iv) Competition Select the correct option. AB C D",
@@ -1382,8 +1284,7 @@
     "answer": "b",
     "source": "NEET (Oct.) 2020",
     "subject": "Biology",
-    "has_image": false,
-    "id": 99
+    "has_image": false
   },
   {
     "question": "I. Burrowing in soil to escape high temperature. II. Losing heat rapidly from the body during high temperature.Organisms and Population 345 Density– ++ Natality Mortality Immigration Emigration Post-reproductive Reproductive Pre-reproductive III. Bask in sun when temperature is low. IV. Insulating bod",
@@ -1396,8 +1297,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2011",
     "subject": "Biology",
-    "has_image": false,
-    "id": 100
+    "has_image": false
   },
   {
     "question": "Organisms and Population 347 48163264128256 12 34 56 Time (in minute)Number of bacteria 789 1 0Lag phase Log of exponentialgrowth phase Stationary phase Death or logarithmicdecline phase 5 0 10 Time (h)Lag of numbersof bacteria 348 NEET Chapterwise Topicwise Biology",
@@ -1410,8 +1310,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2002",
     "subject": "Biology",
-    "has_image": false,
-    "id": 101
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Earthworm 1. Pioneer species B. Succession 2. Detritivore C. Ecosystem service3. Natality D. Population growth4. Pollination Codes ABCD ABCD",
@@ -1424,8 +1323,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2014",
     "subject": "Biology",
-    "has_image": false,
-    "id": 102
+    "has_image": false
   },
   {
     "question": "NEET Chapterwise Topicwise Biology Nutrient Cycling TOPIC 4 ABCD",
@@ -1438,8 +1336,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2014",
     "subject": "Biology",
-    "has_image": false,
-    "id": 103
+    "has_image": false
   },
   {
     "question": "Column-I Column-II 1. Eutrophication i. UV-B radiation 2. Sanitary landfill ii. Deforestation3. Snow blindness iii. Nutrient enrichment 4. Jhum cultivation iv. Waste disposal 12 34",
@@ -1452,8 +1349,7 @@
     "answer": "a",
     "source": "NEET 2018",
     "subject": "Biology",
-    "has_image": false,
-    "id": 104
+    "has_image": false
   },
   {
     "question": "FGMm r=2,here Gis gravitational constant. The relation between Gand K is described as",
@@ -1466,8 +1362,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2015",
     "subject": "Physics",
-    "has_image": false,
-    "id": 105
+    "has_image": false
   },
   {
     "question": "Match the following : Column-I Column-II P. Process I a. Adiabatic Q. Process II b. Isobaric R. Process III c. Isochoric S. Process IV d. Isothermal",
@@ -1480,8 +1375,7 @@
     "answer": "b",
     "source": "NEET 2017",
     "subject": "Physics",
-    "has_image": false,
-    "id": 106
+    "has_image": false
   },
   {
     "question": "In process AB,400 J of heat is added to the system and in process BC, 100 J of heat is added to the system. The heat absorbed by thesystem in the process ACwill be",
@@ -1494,8 +1388,7 @@
     "answer": "c",
     "source": "CBSE AIPMT 2015",
     "subject": "Physics",
-    "has_image": false,
-    "id": 107
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Root mean square of gas molecules1. 1 32nmv B. Pressure exerted by ideal gas2. 3RT M C. Average kinetic energy of a molecule3. 5 2RT D. Total internal energy of 1 mole of adiatomic gas4.3 2k TB Codes ABCD",
@@ -1508,8 +1401,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Physics",
-    "has_image": false,
-    "id": 108
+    "has_image": false
   },
   {
     "question": "y-projection of the radius vector of rotating particle Pis",
@@ -1522,8 +1414,7 @@
     "answer": "c",
     "source": "NEET (National) 2019",
     "subject": "Physics",
-    "has_image": false,
-    "id": 109
+    "has_image": false
   },
   {
     "question": "Given, potential in a region, Vx y yy z=− +62 . Electric field in a region, EV x V y V z=− − −∂ ∂∂ ∂∂ ∂$$ $ijk ⇒ Ey x y=− − − − 66 12$()$$ij k Electrostatics Potential and Capacitance 149 20 V 40 V AB 10 V 30 V 10 V 30 V40 V 20 V 10 V 30 V 20 V 40 V10 V30 VAB AB40 V 20 V AB (iii) (iv) s R Ps 2R QV r V∝1",
@@ -1536,8 +1427,7 @@
     "answer": "a",
     "source": "",
     "subject": "Physics",
-    "has_image": false,
-    "id": 110
+    "has_image": false
   },
   {
     "question": "Column I Column II A. Drift velocity 1. m ne2ρ B. Electrical resistivity 2. nevd C. Relaxation period 3. e E mτ D. Current density 4. E J Codes ABCD",
@@ -1550,8 +1440,7 @@
     "answer": "a",
     "source": "NEET 2021",
     "subject": "Physics",
-    "has_image": false,
-    "id": 111
+    "has_image": false
   },
   {
     "question": "Column 1 Column 2 A. m=−2 a. Convex mirror B. m=−1 2b. Concave mirror C. m=+ 2 c. Real image D. m=+1 2d. Virtual image",
@@ -1564,8 +1453,7 @@
     "answer": "d",
     "source": "NEET 2016",
     "subject": "Physics",
-    "has_image": true,
-    "id": 112
+    "has_image": true
   },
   {
     "question": "NEET Chapterwise Topicwise Physics Nuclear Fission & Fusion and Binding Energy TOPIC 2",
@@ -1578,8 +1466,7 @@
     "answer": "b",
     "source": "CBSE AIPMT 2007",
     "subject": "Physics",
-    "has_image": false,
-    "id": 113
+    "has_image": false
   },
   {
     "question": "(B) The potential barrier of p-n junction lies between 0.1 V to 0.3 V.",
@@ -1592,8 +1479,7 @@
     "answer": "c",
     "source": "NEET 2021",
     "subject": "Physics",
-    "has_image": false,
-    "id": 114
+    "has_image": false
   },
   {
     "question": "(i) type of semiconductor material (ii) amount of doping (iii) temperature Which one of the following is correct?",
@@ -1606,8 +1492,7 @@
     "answer": "d",
     "source": "CBSE AIPMT 2014",
     "subject": "Physics",
-    "has_image": false,
-    "id": 115
+    "has_image": false
   },
   {
     "question": "Pick out which ones are for AND,NAND and NOT gates,respectively.",
@@ -1620,7 +1505,6 @@
     "answer": "c",
     "source": "CBSE AIPMT 2011",
     "subject": "Physics",
-    "has_image": false,
-    "id": 116
+    "has_image": false
   }
 ]
