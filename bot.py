@@ -164,6 +164,291 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
 
 
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /help command"""
+    text = (
+        "📖 *BOT COMMANDS*\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "🔹 /start — Quiz shuru karo 🎮\n"
+        "🔹 /help — Ye help message 📖\n"
+        "🔹 /score — Current score dekho 📊\n"
+        "🔹 /stats — Total stats dekho 🏆\n"
+        "🔹 /bio — Sirf Biology quiz 🧬\n"
+        "🔹 /phys — Sirf Physics quiz ⚛️\n"
+        "🔹 /mixed — Mixed quiz dono subjects 🎯\n"
+        "🔹 /restart — Quiz restart karo 🔄\n"
+        "🔹 /about — Bot ke baare mein 🤖\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "⏱️ Har question ka time: *60 seconds*\n"
+        "✅ Sahi jawab = Compliment!\n"
+        "❌ Galat jawab = Encouragement!\n\n"
+        "🧬 Biology: " + str(len(BIO_QUESTIONS)) + " Questions\n"
+        "⚛️ Physics: " + str(len(PHYS_QUESTIONS)) + " Questions\n"
+        "📋 Total: " + str(len(ALL_QUESTIONS)) + " Questions\n"
+        f"{FOOTER}"
+    )
+    await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+
+
+async def score_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /score command - show current quiz score"""
+    user_id = update.effective_user.id
+    state = get_user_state(user_id)
+    
+    if not state["questions"]:
+        await update.message.reply_text(
+            "📊 *Abhi tak koi quiz nahi khela!*\n\n"
+            "/start karo aur quiz shuru karo! 🎮"
+            f"{FOOTER}",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return
+    
+    total = len(state["questions"])
+    current = state["current_index"] + 1
+    correct = state["correct"]
+    wrong = state["wrong"]
+    attempted = correct + wrong
+    
+    if attempted > 0:
+        pct = round((correct / attempted) * 100)
+    else:
+        pct = 0
+    
+    # Progress bar
+    filled = int((current / total) * 10)
+    bar = "🟩" * filled + "⬜" * (10 - filled)
+    
+    text = (
+        f"📊 *CURRENT SCORE*\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"📝 Question: {current}/{total}\n\n"
+        f"{bar}\n\n"
+        f"✅ Correct: *{correct}*\n"
+        f"❌ Wrong: *{wrong}*\n"
+        f"⏰ Timeout: *{state['timeout_count']}*\n"
+        f"📈 Accuracy: *{pct}%*\n"
+        f"{FOOTER}"
+    )
+    await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+
+
+async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /stats command - show overall stats"""
+    user_id = update.effective_user.id
+    state = get_user_state(user_id)
+    
+    total_q = len(state["questions"])
+    
+    if total_q == 0:
+        await update.message.reply_text(
+            "📊 *No Stats Yet!*\n\n"
+            "Pehle quiz khelo, phir stats dekhna! 🎮\n"
+            "/start karo!"
+            f"{FOOTER}",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return
+    
+    correct = state["correct"]
+    wrong = state["wrong"]
+    timeout = state["timeout_count"]
+    total = len(ALL_QUESTIONS)
+    
+    text = (
+        f"🏆 *YOUR STATS*\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"📚 Total Questions Available: *{total}*\n"
+        f"🧬 Biology: *{len(BIO_QUESTIONS)}*\n"
+        f"⚛️ Physics: *{len(PHYS_QUESTIONS)}*\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"📝 Questions Attempted: *{correct + wrong}*\n"
+        f"✅ Correct: *{correct}*\n"
+        f"❌ Wrong: *{wrong}*\n"
+        f"⏰ Timeout: *{timeout}*\n"
+        f"{FOOTER}"
+    )
+    await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+
+
+async def bio_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /bio command - start Biology quiz directly"""
+    # Create a fake callback query
+    user = update.effective_user
+    text = (
+        f"🧬 *BIOLOGY QUIZ*\n\n"
+        f"📝 Questions: *{len(BIO_QUESTIONS)}*\n"
+        f"⏱️ Time: *60 seconds* per question\n\n"
+        f"Starting... 🚀"
+        f"{FOOTER}"
+    )
+    
+    msg = await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+    
+    # Set up state
+    user_id = user.id
+    state = get_user_state(user_id)
+    if state.get("timer_task"):
+        state["timer_task"].cancel()
+    
+    state["questions"] = random.sample(BIO_QUESTIONS, len(BIO_QUESTIONS))
+    random.shuffle(state["questions"])
+    state["current_index"] = 0
+    state["correct"] = 0
+    state["wrong"] = 0
+    state["timeout_count"] = 0
+    state["answered"] = False
+    state["subject"] = "Biology"
+    
+    await asyncio.sleep(1.5)
+    
+    # Create a mock callback query to reuse send_question
+    class MockQuery:
+        def __init__(self, message, user_id):
+            self.message = message
+            self.from_user = update.effective_user
+        
+        async def edit_message_text(self, *args, **kwargs):
+            return await self.message.reply_text(*args, **kwargs)
+    
+    mock_query = MockQuery(msg, user_id)
+    await send_question(mock_query, context)
+
+
+async def phys_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /phys command - start Physics quiz directly"""
+    user = update.effective_user
+    text = (
+        f"⚛️ *PHYSICS QUIZ*\n\n"
+        f"📝 Questions: *{len(PHYS_QUESTIONS)}*\n"
+        f"⏱️ Time: *60 seconds* per question\n\n"
+        f"Starting... 🚀"
+        f"{FOOTER}"
+    )
+    
+    msg = await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+    
+    user_id = user.id
+    state = get_user_state(user_id)
+    if state.get("timer_task"):
+        state["timer_task"].cancel()
+    
+    state["questions"] = random.sample(PHYS_QUESTIONS, len(PHYS_QUESTIONS))
+    random.shuffle(state["questions"])
+    state["current_index"] = 0
+    state["correct"] = 0
+    state["wrong"] = 0
+    state["timeout_count"] = 0
+    state["answered"] = False
+    state["subject"] = "Physics"
+    
+    await asyncio.sleep(1.5)
+    
+    class MockQuery:
+        def __init__(self, message):
+            self.message = message
+            self.from_user = update.effective_user
+        
+        async def edit_message_text(self, *args, **kwargs):
+            return await self.message.reply_text(*args, **kwargs)
+    
+    mock_query = MockQuery(msg)
+    await send_question(mock_query, context)
+
+
+async def mixed_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /mixed command - start mixed quiz directly"""
+    user = update.effective_user
+    text = (
+        f"🎯 *MIXED QUIZ (Biology + Physics)*\n\n"
+        f"📝 Questions: *{len(ALL_QUESTIONS)}*\n"
+        f"⏱️ Time: *60 seconds* per question\n\n"
+        f"Starting... 🚀"
+        f"{FOOTER}"
+    )
+    
+    msg = await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+    
+    user_id = user.id
+    state = get_user_state(user_id)
+    if state.get("timer_task"):
+        state["timer_task"].cancel()
+    
+    state["questions"] = random.sample(ALL_QUESTIONS, len(ALL_QUESTIONS))
+    random.shuffle(state["questions"])
+    state["current_index"] = 0
+    state["correct"] = 0
+    state["wrong"] = 0
+    state["timeout_count"] = 0
+    state["answered"] = False
+    state["subject"] = "Both"
+    
+    await asyncio.sleep(1.5)
+    
+    class MockQuery:
+        def __init__(self, message):
+            self.message = message
+            self.from_user = update.effective_user
+        
+        async def edit_message_text(self, *args, **kwargs):
+            return await self.message.reply_text(*args, **kwargs)
+    
+    mock_query = MockQuery(msg)
+    await send_question(mock_query, context)
+
+
+async def restart_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /restart command"""
+    user_id = update.effective_user.id
+    state = get_user_state(user_id)
+    
+    if state.get("timer_task"):
+        state["timer_task"].cancel()
+        state["timer_task"] = None
+    
+    state["questions"] = []
+    state["current_index"] = 0
+    state["correct"] = 0
+    state["wrong"] = 0
+    state["timeout_count"] = 0
+    state["answered"] = False
+    
+    await update.message.reply_text(
+        "🔄 *Quiz Reset!*\n\n"
+        "Naya quiz shuru karne ke liye:\n\n"
+        "🔹 /bio — Biology\n"
+        "🔹 /phys — Physics\n"
+        "🔹 /mixed — Both Mixed\n"
+        "🔹 /start — Subject choose karo"
+        f"{FOOTER}",
+        parse_mode=ParseMode.MARKDOWN
+    )
+
+
+async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /about command"""
+    text = (
+        "🤖 *ABOUT THIS BOT*\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "📚 *NEET Quiz Bot*\n"
+        "📖 Arihant 34 Years PYQs\n\n"
+        "🧬 Biology: " + str(len(BIO_QUESTIONS)) + " Questions\n"
+        "⚛️ Physics: " + str(len(PHYS_QUESTIONS)) + " Questions\n"
+        "📋 Total: " + str(len(ALL_QUESTIONS)) + " Questions\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "⏱️ 60 seconds timer per question\n"
+        "✅ Compliments on correct answers\n"
+        "🔄 Auto-ping every 5 minutes\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "💻 *Built with:* Python + Telegram API\n"
+        "🌐 *Hosted on:* Render.com\n"
+        "📦 *Questions:* Arihant NEET 34 Yrs PYQs\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "🫠 **MADE BY SPARTA**"
+    )
+    await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+
+
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -393,6 +678,22 @@ async def show_results(query, context):
 
 
 # ==================== TELEGRAM BOT RUNNER ====================
+async def set_bot_commands(application):
+    """Set bot commands menu"""
+    await application.bot.set_my_commands([
+        ("start", "🎮 Quiz shuru karo"),
+        ("help", "📖 Help / Commands"),
+        ("bio", "🧬 Biology Quiz"),
+        ("phys", "⚛️ Physics Quiz"),
+        ("mixed", "🎯 Mixed Quiz"),
+        ("score", "📊 Current Score"),
+        ("stats", "🏆 Total Stats"),
+        ("restart", "🔄 Reset Quiz"),
+        ("about", "🤖 About Bot"),
+    ])
+    print("✅ Bot commands menu set!")
+
+
 def run_telegram_bot():
     """Run the Telegram bot in a thread"""
     TOKEN = os.environ.get("BOT_TOKEN", "")
@@ -405,8 +706,18 @@ def run_telegram_bot():
     print(f"🧬 Biology: {len(BIO_QUESTIONS)}")
     print(f"⚛️ Physics: {len(PHYS_QUESTIONS)}")
 
-    telegram_app = Application.builder().token(TOKEN).build()
+    telegram_app = Application.builder().token(TOKEN).post_init(set_bot_commands).build()
+    
+    # Add all command handlers
     telegram_app.add_handler(CommandHandler("start", start_command))
+    telegram_app.add_handler(CommandHandler("help", help_command))
+    telegram_app.add_handler(CommandHandler("score", score_command))
+    telegram_app.add_handler(CommandHandler("stats", stats_command))
+    telegram_app.add_handler(CommandHandler("bio", bio_command))
+    telegram_app.add_handler(CommandHandler("phys", phys_command))
+    telegram_app.add_handler(CommandHandler("mixed", mixed_command))
+    telegram_app.add_handler(CommandHandler("restart", restart_command))
+    telegram_app.add_handler(CommandHandler("about", about_command))
     telegram_app.add_handler(CallbackQueryHandler(button_handler))
 
     print("✅ Telegram bot is running!")
